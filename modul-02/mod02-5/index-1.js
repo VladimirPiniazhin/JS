@@ -4,7 +4,7 @@ let num;
 
 for (let i = 1; i <= 5; i++) {
   num = prompt("Anna numero: ");
-  numbers.push(num);
+  num = numbers.push(num);
 }
 
 for (let i = 5; i >= 0; i--) {
