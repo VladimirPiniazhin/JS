@@ -12,6 +12,7 @@ while (a == false) {
     numbers.push(n);
   }
 }
+alert("The number has already been given!")
 
 numbers.sort((a, b) => a - b);
 

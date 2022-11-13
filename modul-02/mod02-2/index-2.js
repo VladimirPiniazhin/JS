@@ -8,6 +8,10 @@ for (let i = 1; i <= numNames; i++) {
   names.push(n);
 }
 
+names.sort();
+
+console.log(names)
+
 for (let name of names) {
   let li = document.createElement("li");
   li.innerHTML = name;
