@@ -1,10 +1,8 @@
 "use strict";
 const names = ["John", "Paul", "Jones"];
 
-let parent = document.querySelector("#target");
+let parent = document.getElementById("target");
 
-for (let n of names) {
-  let li = document.createElement("li");
-  li.innerHTML = n;
-  parent.append(li);
+for (let name of names) {
+  parent.innerHTML += `<li>${name}</li>`;
 }
