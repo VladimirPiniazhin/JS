@@ -16,6 +16,9 @@ button.addEventListener("click", function () {
   document.querySelector("#calculation").value = "";
 });
 
+//Toinen vaihtoehto
+
+
 /*button.addEventListener("click", function () {
   let string = document.querySelector("#calculation").value;
   let list1 = string.split("");
