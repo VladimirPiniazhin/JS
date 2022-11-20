@@ -1,11 +1,25 @@
 "use strict";
 
 let p = document.querySelector("#target");
-const button = document.querySelector("#submit");
 
-button.addEventListener("click", function () {
-  let num1 = +document.querySelector("#num1").value;
-  let num2 = +document.querySelector("#num2").value;
-  let select = document.querySelector("#operation");
-  let value = select.value;
-});
+function serialForm(formNode) {
+  const { elements } = formNode;
+  const data = Array.from(elements)
+    .filter((item) => !!item.name)
+    .map((element) => {
+      const { name, value } = element;
+
+      return { name, value };
+    });
+
+  p.innerHTML = `Your name is ${data[0]["value"]} ${data[1]["value"]}`;
+}
+
+function handleFormSubmit(event) {
+  // Älä lähetä lomaketta itse
+  event.preventDefault();
+  serialForm(form);
+}
+
+const form = document.getElementById("source");
+form.addEventListener("submit", handleFormSubmit);
