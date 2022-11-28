@@ -8,7 +8,6 @@ function serialForm(formNode) {
     .filter((item) => !!item.name)
     .map((element) => {
       const { name, value } = element;
-
       return { name, value };
     });
 
