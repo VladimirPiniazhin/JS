@@ -14,9 +14,17 @@ body {
 }
 
 header {
-  background-color: #3ea9dd;
+  background-color: #4890b4;
+  text-align: center;
   padding: 1rem;
   color: #fff;
+}
+#query {
+  width: 40%;
+}
+
+link a {
+  display: block;
 }
 
 main {
@@ -32,7 +40,7 @@ section {
 }
 
 article {
-  width: calc(100% / 3 - 2rem);
+  width: calc(100% / 3 - 1rem);
   box-sizing: border-box;
   cursor: pointer;
   border: 1px #ccc solid;
