@@ -14,9 +14,17 @@ body {
 }
 
 header {
-  background-color: #3ea9dd;
+  background-color: #4890b4;
+  text-align: center;
   padding: 1rem;
   color: #fff;
+}
+#query {
+  width: 40%;
+}
+
+link a {
+  display: block;
 }
 
 main {

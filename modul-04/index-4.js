@@ -19,17 +19,27 @@ function renderHtml(data) {
   } else {
     for (let obj of data) {
       let content = `<article>
-                      <h2>${obj["show"]["name"]}</h2>
-                      <figure>
+                     <figure>
                         <img src="${
                           obj["show"]["image"] == null
                             ? "No img.jpg"
                             : obj["show"]["image"]["medium"]
                         }" alt="">
-                        <figcaption>${obj["show"]["genres"][0]}</figcaption>
+                        <figcaption><a href="${
+                          obj["show"]["url"]
+                        }" target="_blank">${
+        obj["show"]["name"]
+      }</a></figcaption>
                      </figure>
-                     <a>${obj["show"]["url"]}</a></article>`;
+                     <p>Premiered: ${obj["show"]["premiered"]} </p>
+                     <p>Genre: ${obj["show"]["genres"].join("|")}</p>
+                     <p>Language: ${obj["show"]["language"]}</p>
+                     ${obj["show"]["summary"]}
+                     </article>`;
+
       targetElem.innerHTML += content;
+      const a = document.querySelector("a");
+      a.target = "_blank";
     }
   }
 }
