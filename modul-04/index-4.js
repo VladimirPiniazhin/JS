@@ -24,8 +24,9 @@ function renderHtml(data) {
                      </figure>
                      <a>${obj["show"]["url"]}</a></article>`;
       targetElem.innerHTML += content;
+      
     }
-    
+   
   }
 }
 
@@ -59,6 +60,7 @@ async function serialForm(formNode) {
     const filmData = await getData(userInput);
     console.log('Data:', filmData);
     renderHtml(filmData);
+    document.getElementsByName("q").value = ""
   }
 
 
