@@ -30,11 +30,11 @@ link a {
 }
 
 main {
-  background-color: #fff;
+  background-color: rgb(245, 243, 243);
   padding: 1rem;
 }
 
-section {
+.section {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -50,6 +50,7 @@ article {
   border-radius: 6px;
   box-shadow: 3px 6px 6px #ccc;
   transition: all 0.2s ease-in-out;
+  background-color: white;
 }
 
 article:hover {
@@ -76,12 +77,37 @@ figcaption {
   text-align: center;
 }
 
-footer {
-  background-color: #3ea9dd;
-  text-align: center;
-  padding: 1rem;
+.modal {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  transition: .3s;
+  top: -1000px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: scroll;
+  padding: 60px 15px;
 }
 
+.modal_active {
+  position: fixed;
+  top: 0;
+  visibility: visible;
+  opacity: 1;
+  transition: .3s;
+}
+
+
+
+
+
+/*
 dialog {
   position: fixed;
   transition: all 0.5s ease-in-out;
@@ -105,4 +131,4 @@ dialog span {
   text-decoration: none;
   color: #fff;
   filter: drop-shadow(2px 2px 2px #000);
-}
+}*/

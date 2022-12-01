@@ -21,32 +21,19 @@ function renderHtml(data) {
       let content = `<article>
                      <figure>
                         <img src="${
-                          obj["show"]["image"] == null
-                            ? "No img.jpg"
-                            : obj["show"]["image"]["medium"]
-                        }" alt="">
-                        <figcaption><a href="${
-                          obj["show"]["url"]
-                        }" target="_blank">${
-        obj["show"]["name"]
-      }</a></figcaption>
+                          obj["show"]["image"] == null ? "No img.jpg" : obj["show"]["image"]["medium"]}" alt="">
+                        <figcaption><a target="_blank" href="${obj["show"]["url"]}">${
+        obj["show"]["name"]} </a></figcaption>
                      </figure>
-                     <p>Premiered: ${obj["show"]["premiered"]} </p>
+                     <p>Premiered: ${obj["show"]["premiered"] == null ? "unknown": obj["show"]["premiered"]} </p>
                      <p>Genre: ${obj["show"]["genres"].join("|")}</p>
                      <p>Language: ${obj["show"]["language"]}</p>
-                     ${obj["show"]["summary"]}
+                     ${obj["show"]["summary"] == null ? "": obj["show"]["summary"]}
                      </article>`;
 
       targetElem.innerHTML += content;
-<<<<<<< HEAD
-      
+
     }
-   
-=======
-      const a = document.querySelector("a");
-      a.target = "_blank";
-    }
->>>>>>> 7ed14610134a66020d77bbe0d06ac0fb96fc95d1
   }
 }
 
@@ -54,6 +41,7 @@ function handleFormSubmit(event) {
   event.preventDefault();
   main();
   document.querySelector("#query").value = "";
+  
 }
 
 async function main() {
@@ -63,28 +51,58 @@ async function main() {
   renderHtml(filmData);
 }
 
-<<<<<<< HEAD
-async function serialForm(formNode) {
-  const { elements } = formNode;
-  const data = Array.from(elements)
-    .filter((item) => !!item.name)
-    .map((element) => {
-      const { name, value } = element;
-      return { name, value };
-    });
-    let userInput = data[0]["value"]    
-    const filmData = await getData(userInput);
-    console.log('Data:', filmData);
-    renderHtml(filmData);
-    document.getElementsByName("q").value = ""
-  }
-
-
-
-const form = document.getElementById("search-form");
-=======
 const form = document.querySelector("form");
->>>>>>> 7ed14610134a66020d77bbe0d06ac0fb96fc95d1
 form.addEventListener("submit", handleFormSubmit);
 
+
 console.log("ohjelma jatkuu");
+
+
+                   /*IFRAME*/
+/*-----------------------------------------------*/
+
+
+
+
+function click(event) {
+  event.preventDefault();
+  alert('You clicked me!')
+   
+}
+
+
+const allAs = document.querySelectorAll('figcaption')
+console.log(allAs.length)
+//allAs.addEventListener('click', click);
+//for (let i = 0; i < 10; i++) {
+  //allAs[i].addEventListener('click', alert('You clicked me!'))
+//}
+
+
+
+
+
+/*
+const allAs = document.querySelectorAll('a');
+for (let i = 0; i < allAs.length; i++) {
+  allAs[i].addEventListener('click', openModal)
+}
+const span = document.querySelector('span');
+span.addEventListener('click', closeModal);
+
+
+
+function openModal(evt) {
+  evt.preventDefault();
+  const dialog = document.querySelector('dialog');
+  const iframe = document.querySelector('iframe');
+
+  iframe.src=evt.currentTarget.getAttribute("href");
+  dialog.showModal();
+}
+
+
+function closeModal() {
+  const dialog = document.querySelector('dialog');
+  dialog.close();
+}*/
